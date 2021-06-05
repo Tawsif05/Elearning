@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title_block %} {{blog.blog_title}} {% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12">
+      <h2>{{blog.blog_title}}</h2>
+      <h4>Posted By: {{blog.instructor}}</h4>
+      <i>
+        <h6>Published On: {{blog.publish_date}}</h6>
+      </i>
+      <br>
+      <i>
+        <h6>Updated On: {{blog.update_date}}</h6>
+      </i>
+    </div>
+
+
+    <p style="padding-left:50px;">
+      {{blog.blog_content|linebreaks}}
+    </p>
+    <hr>
+
+
+
+
+
+    <br>
+    <br>
+  </div>
+</div>
+
+{% endblock content %}

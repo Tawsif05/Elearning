@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+<div class="container">
+    <h3>List of Videos</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>Video Caption</th>
+        <th>Video</th>
+        <th>Delete</th>
+
+    </tr>
+    {% for x in all %}
+    <tr>
+        <td>{{x.caption}}</td>
+        <td><video class="embed-responsive embed-responsive-16by9" controls="controls"><source src="{{x.video.url}}" type="video/mp4" /></video></td>
+        <td>
+        <form action="{% url 'video:video_delete' x.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="subject" value="{{ x.id }}" />
+            <div class="price-button pt-10">
+
+                <button type="submit" class="btn btn-danger btn-md">Remove</a>
+            </div>
+        </form>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+
+
+
+{% endblock content %}

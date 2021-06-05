@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="bg_cover pt-150" style="background-color:#e6e6fa;padding-bottom: 100px;">
+
+
+  <div class="container">
+    <div class="row text-center course-video" >
+
+
+
+        <div class="col-xl-12 col-lg-12">
+        <h1 class="text-center"> Choose Your Dream. . .</h1>
+        </div>
+
+
+    </div>
+        <br>
+    <div class="row">
+
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center"  >
+
+            <div class="slider-cont">
+                <ul>
+
+                    <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{% url 'users:student_register' %}">Be Master</a></li>
+                    <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{% url 'users:instructor_register' %}">Make Master</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+            <div class="slider-cont">
+                <ul>
+                    <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{% url 'users:instructor_register' %}">Make Master</a></li>
+
+                </ul>
+            </div>
+        </div> -->
+
+    </div>
+
+</div>
+
+  </div>
+  {% endblock content %}

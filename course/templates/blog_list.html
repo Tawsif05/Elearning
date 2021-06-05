@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+{% for blog in blogs%}
+
+<h3>{{blog.blog_title}}</h3>
+<h5><i>{{blog.publish_date}}</i></h5>
+
+<div class="row">
+
+  <div class="col-sm-12">
+    <p>{{blog.blog_content|range_filter|linebreaks}}
+      {% if user.is_authenticated %}
+      <a href="{% url 'app_blog:blog_details' slug=blog.slug %}">Read More</a>
+      {% else %}
+        <a href="{% url 'users:user_login' %}">Read More</a>
+      {% endif %}
+
+    </p>
+   <h5>Posted By: <a href="#">{{blog.instructor|linebreaks}}</a></h5>
+  </div>
+    </div>
+
+    <hr>
+
+
+{% endfor %}
+  </div>
+{% endblock content %}

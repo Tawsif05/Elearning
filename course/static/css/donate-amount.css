@@ -1,0 +1,113 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    background:url(donateanother.png) ;
+    background-size:cover ;
+    background-position:center;
+    font-family: sans-serif;
+}
+.loginbox{
+    width:350px;
+    height:450px;
+    background:white;
+    color:grey;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+
+}
+.logo{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 130px;
+   
+}
+
+h1{
+  margin: 0;
+  padding-top:50px;
+ text-align: center;
+ font-size: 22px;
+ color:black;
+ margin-right: 10px;
+ margin-left: 10px;
+}
+.loginbox hr{
+    border: 0.1px solid #aca4a4;
+    width:250px;
+
+}
+
+.loginbox p{
+    margin-left: 20px;
+    margin right: 20px;
+    padding:0;
+    font-weight:bold;
+}
+.loginbox input{
+   
+    width: 80%;
+    margin-bottom:20px;
+    margin-left: 30px;
+     
+}
+.loginbox input[type="text"],input[type="number"],input[type="datetime"]
+  {
+     margin: 0;
+      border: none;
+     border-bottom:1px solid black;
+     background:rgb(238, 236, 236);
+     outline:none;
+     height: 30px;
+     color:white;
+     font-size: 16px;
+     margin-bottom:20px;
+
+  }
+  .loginbox input[type="submit"]
+   {
+        border: none;
+        outline: none;
+        height: 40px;
+        background:rgb(17, 158, 252);
+        colour:white;
+        font-size: 18px;
+        border-radius: 10px;
+        margin-left: 35px;
+
+  }
+  .loginbox input[type="submit"]:hover
+  {
+     cursor: pointer;
+     background: cadetblue;
+     color:white;
+
+  }
+  .loginbox i{
+    margin-left: 10px;
+    background-color:rgb(238, 236, 236);;
+    padding: 6px;
+    color:black;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

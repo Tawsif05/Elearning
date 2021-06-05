@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+.donate{
+ background-image:url('/static/images/Donations.jpg');
+ background-size: cover;
+ background background-repeat:no-repeat;
+    height:550px ;
+  width:auto;
+}
+
+.donatepara{
+
+  font-family:sans-serif;
+     padding: 10px;
+     margin-top: 30px;
+     margin-left: 150px;
+     margin-right: 150px;
+
+}
+span{
+  color: rgb(59, 180, 228);
+}
+.donatemain{
+   display :flex;
+   justify-content:center;
+   justify-content: space-around;
+   background-color:rgb(235, 231, 231);
+   padding-top: 40px;
+   padding-bottom: 60px;
+}
+
+
+.donatebox3{
+  background-color:white;
+  height: 220px;
+  width: 250px;
+  margin-right:220px;
+  padding-top: 40px;
+  text-align:center;
+
+}
+.donatebox3:hover
+{
+    background-color: white;
+
+}
+.donatebox3:active{
+  box-shadow: 0px 2px 20px 1px  rgb(199, 196, 196);
+}
+.header2{
+  font-family: Roboto;
+  font-weight:bold ;
+   color: rgb(41, 161, 161);
+
+}
+.header1{
+  font-family:Roboto;
+   color: rgb(4, 8, 8);
+
+}
+.header0{
+  font-family: Roboto;
+  font-weight:bold ;
+   color: rgb(41, 161, 161);
+   margin-bottom:70px;
+
+}
+
+.button01{
+     height: 30px;
+     width:80px;
+     background-color: rgb(17, 158, 252);
+     color: white;
+     border-radius:10%;
+     border-color:  rgb(17, 158, 252);
+     outline: none;
+
+
+}
+
+hr{
+  border: 0.5px solid rgb(233, 228, 228);
+
+}
+img{
+  display: block;
+  height: 100%;
+  width:100px%;
+  margin-left: 35px;
+  margin-top: 10px;
+}
+
+.donateparalast{
+  font-family:sans-serif;
+   padding: 10px;
+   margin-top: 30px;
+   margin-left: 150px;
+   margin-right: 150px;
+
+}

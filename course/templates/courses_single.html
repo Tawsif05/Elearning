@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load static %}
+{% load random_numbers %}
+{% block content %}
+
+    <!--====== PAGE BANNER PART START ======-->
+
+    <!--====== PAGE BANNER PART ENDS ======-->
+
+    <!--====== COURSES SINGEl PART START ======-->
+
+    <section id="courses-single" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="courses-single-left mt-30">
+                        <div class="title">
+                            <h3>{{course.name}}</h3>
+                        </div> <!-- title -->
+
+                        <div class="course-terms">
+
+                                    <div class="teacher-name">
+
+                                        <div class="name">
+
+                                            <h6>{{instructor.username}}</h6>
+                                        </div>
+                                    </div>
+
+                        </div> <!-- course terms -->
+
+
+                        <div class="courses-single-image pt-50">
+                            <img src="{% static 'images/course/cu-1.jpg' %}" alt="Courses">
+                        </div> <!-- courses single image -->
+                        <div class="row">
+                            <div class="col-lg-12 col-md-6">
+                                <div class="course-features mt-30">
+
+
+                                    {% if  enrollment.encourse == course and enrollment.student == user %}
+                                    <form action="{% url 'course:course_dismiss' course.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="subject" value="{{ course.id }}" />
+                                        <div class="price-button pt-10">
+                                            <span>Enrolled</span>
+                                            <button type="submit" class="main-btn">Dismiss Now</a>
+                                        </div>
+                                    </form>
+                                    {% else %}
+                                    <form action="{% url 'course:course_enroll' course.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="subject" value="{{ course.id }}" />
+                                        <div class="price-button pt-10">
+
+                                            <button type="submit" class="main-btn" style="margin-left:50px;">Enroll Now</a>
+                                        </div>
+                                    </form>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="courses-tab mt-30">
+                            <ul class="nav nav-justified" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="curriculum-tab" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="false">Videos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false">Instructor</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                                    <div class="overview-description">
+                                        <div class="single-description pt-40">
+                                            <h6>Course Summery</h6>
+                                            <p>{{course.course_description}}</p>
+                                        </div>
+
+                                    </div> <!-- overview description -->
+                                </div>
+
+                                <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum-tab">
+                                    <div class="curriculum-cont">
+
+                                        <div class="accordion" id="accordionExample">
+                                            {% if enrollment.encourse == course and enrollment.student == user %}
+                                            {% for x in all %}
+                                            <h3 class="text-center mt-2 mb-2">{{x.caption}}</h3>
+                                            <video class="embed-responsive embed-responsive-16by9" controls="controls">
+                                                <source src="{{x.video.url}}" type="video/mp4" />
+                                            </video>
+                                            {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div> <!-- curriculum cont -->
+                                </div>
+                                <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
+                                    <div class="instructor-cont">
+                                        <div class="instructor-author">
+                                            <div class="author-thum">
+                                                <img src="{% static 'images/instructor/i-1.jpg' %}" alt="Instructor">
+                                            </div>
+                                            <div class="author-name">
+                                                <a href="#"><h5>{{instructor.username}}</h5></a>
+
+                                                <ul class="social">
+                                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="instructor-description pt-25">
+                                          <h4>Contact</h4>
+                                            <p>Email: {{instructor.email}}</p>
+                                        </div>
+                                    </div> <!-- instructor cont -->
+                                </div>
+
+
+
+
+
+
+
+                        </div> <!-- row -->
+                    </div> <!-- related courses -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+
+
+
+
+{% endblock content %}

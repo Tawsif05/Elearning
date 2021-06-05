@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class=container>
+  <div class="create-video">
+    <h2>Create Course</h2>
+
+
+<form method="POST">
+{% csrf_token %}
+{{course_form | crispy}}
+<div class="button-box">
+
+    <button class="btn btn-success btn-md" type="submit" style="margin-bottom:30px;margin-top:20px;"><span>Create Course</span></button>
+</div>
+</form>
+</div>
+  </div>
+
+{% endblock content %}

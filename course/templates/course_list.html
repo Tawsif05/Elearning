@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% load random_numbers %}
+{% block content %}
+    <!--====== PAGE BANNER PART START ======-->
+
+    <section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style="background-image: url('/static/images/page-banner-1.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>Our Courses</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'course:course_home' %}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Courses</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== PAGE BANNER PART ENDS ======-->
+
+    <!--====== COURSES PART START ======-->
+
+    <section id="courses-part" class="pt-60 pb-60 gray-bg">
+        <div class="container">
+            <div class="row">
+                {% for course in course_list %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-course mt-30">
+                            <div class="thum">
+
+                              <div class="image">
+                                  <img src="/static/images/course/cu-{{ forloop.counter }}.jpg" alt="Course">
+                              </div>
+                                <div class="price">
+
+                                </div>
+                            </div>
+                            <div class="cont">
+
+
+                                <a href="{% url 'course:courses_single' course.id  %}"><h4>{{ course.name }}</h4></a>
+                                <div class="course-teacher">
+                                    
+                                    <div class="name">
+                                        <a href="#"><h6>{{course.instructor}}</h6></a>
+                                    </div>
+                                    <div class="admin">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- single course -->
+                    </div>
+                {% endfor %}
+            </div> <!-- row -->
+            
+        </div> <!-- container -->
+    </section>
+
+    <!--====== COURSES PART ENDS ======-->
+
+{% endblock content %}

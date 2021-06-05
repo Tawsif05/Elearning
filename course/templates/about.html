@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!--====== SEARCH BOX PART ENDS ======-->
+
+
+    <!--====== PAGE BANNER PART START ======-->
+
+
+
+    <section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="6" style="background-image: url('/static/images/page-banner-1.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>About Master.com</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'course:course_home' %}">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">About Master.com</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== PAGE BANNER PART ENDS ======-->
+
+    <!--====== ABOUT PART START ======-->
+
+    <section id="about-page" class="pt-60 pb-110">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="section-title mt-50">
+                        <h5>About us</h5>
+                        <h2>Welcome to Master.com</h2>
+                    </div> <!-- section title -->
+                    <div class="about-cont">
+                        <p>Master.com is all about connecting & discovering talents, inspiring people and impact lives with the best teaching. It’s a platform where instructors can create courses & upload their knowledge to our platforms so that learners can enroll their courses.</p>
+                    </div>
+                </div> <!-- about cont -->
+                <div class="col-lg-7">
+                    <div class="about-image mt-50">
+                        <img src="{% static 'images/about/about-22.jpg' %}" alt="About">
+                    </div>  <!-- about image -->
+                </div>
+            </div> <!-- row -->
+            <div class="mission">
+            <div class="about-items pt-60">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="about-single-items mt-30">
+                            <span>01</span>
+                            <h4>Our Mission</h4>
+                            <p>Our mission is to even up education through the offering of high-quality learning opportunities that are accessible, flexible. Virtually anyone anywhere in the world with an internet connection and a determination of self-learning can come to Master.com, master an array of skills, and start working to pursue his dreams.</p>
+                        </div> <!-- about single -->
+
+                      </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="about-single-items mt-30">
+                            <span>02</span>
+                            <h4>Our Vision</h4>
+                            <p>Master.com is where motivated learners will come to learn the skills they need, to pursue the jobs they wish, to build things they want and to lead the lives they deserve. Students will be offered with opportunity to do some close to real-world projects curated by experts. These will help them to have the experience and portfolio for future.</p>
+                        </div> <!-- about single -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- about items -->
+              </div> 
+        </div> <!-- container -->
+    </section>
+
+    <!--====== ABOUT PART ENDS ======-->
+
+
+
+{% endblock content %}
